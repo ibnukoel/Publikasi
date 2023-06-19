@@ -1,0 +1,200 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "The model of the E-puck robot"
+  ]
+  title "E-puck simulation"
+}
+Viewpoint {
+  fieldOfView 1
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position -2.3116357431505467e-06 -2.3833491967563236e-06 1.78619653150709
+  follow "e-puck"
+}
+RectangleArena {
+  floorSize 1.5 1.5
+  floorTileSize 0.25 0.25
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        ""
+      ]
+    }
+    roughness 1
+    roughnessMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/appearances/protos/textures/parquetry/chequered_parquetry_roughness.jpg"
+      ]
+    }
+    metalness 0
+    normalMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/appearances/protos/textures/parquetry/chequered_parquetry_normal.jpg"
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/appearances/protos/textures/parquetry/chequered_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+  wallHeight 0.001
+}
+DEF robotku E-puck {
+  hidden position_0_0 0.23999509733497587
+  hidden position_0_1 -0.23999509737547375
+  hidden linearVelocity_0 3.551874325650074e-06 -2.292815963879676e-06 -1.056594778849383e-07
+  hidden angularVelocity_0 0.00015121012978906126 5.879962623322823e-05 -0.3511048682845457
+  hidden rotation_1 0 1 0 0.2399951271372984
+  hidden rotation_2 0 -1 0 0.23999509737547464
+  translation -0.3175142798905443 -0.4288490128350587 -5.600247599111055e-05
+  rotation -1.662067898557211e-05 1.1522738083504573e-05 0.9999999997954898 1.9276141487601448
+  controller "Controller_sim_paper"
+  supervisor TRUE
+  version "2"
+  camera_fieldOfView 0.888
+  camera_width 640
+  camera_height 480
+  camera_antiAliasing TRUE
+  camera_rotation 0 1 0 0.48
+  turretSlot [
+    GPS {
+      translation 0.0095 0 0
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.12549 0.290196 0.529412
+            }
+          }
+          geometry Box {
+            size 0.07 0.07 0.001
+          }
+        }
+      ]
+    }
+  ]
+  groundSensorsSlot [
+    InertialUnit {
+    }
+  ]
+}
+Ceiling {
+  translation 0 0 1.4
+}
+CeilingLight {
+  translation 0.4 0.4 1.4
+  name "ceiling light(1)"
+}
+CeilingLight {
+  translation 0.4 -0.4 1.4
+  name "ceiling light(4)"
+}
+CeilingLight {
+  translation -0.4 0.4 1.4
+  name "ceiling light(2)"
+}
+CeilingLight {
+  translation -0.4 -0.4 1.4
+  name "ceiling light(3)"
+}
+DEF LIne Transform {
+  translation 0.5 0 0.001
+  children [
+    Transform {
+      translation -0.2525 0.0025 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 0.505 0.005
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.5 0.4975 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 1 0.005
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.75 -0.7475 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 0.5 0.005
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.5025 -0.375 0
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 0.005 0.75
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.0025 0.25 0
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 0.005 0.5
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.9975 -0.125 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+            }
+          }
+          geometry Plane {
+            size 0.005 1.25
+          }
+        }
+      ]
+    }
+  ]
+}
